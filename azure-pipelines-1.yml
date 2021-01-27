@@ -15,6 +15,7 @@ parameters:
   - Australia/Sydney
 - task: SSH@0
   inputs:
+    sshEndpoint: 'devlnxttca-sampath'
     runOptions: 'inline'
     inline: 'echo "hello..im from "$timezone'
     readyTimeout: '20000'
