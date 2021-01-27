@@ -1,3 +1,5 @@
+stages:
+- stage: develop
 jobs:
 - job: Job_1
   displayName: Pipeline yml format
