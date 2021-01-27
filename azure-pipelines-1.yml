@@ -14,10 +14,10 @@ parameters:
   - Africa/Johannesburg
   - Australia/Sydney
   steps:
-  - checkout: none    
-  - task: SSH@0
-    inputs:
-      sshEndpoint: 'devlnxttca-sampath'
-      runOptions: 'inline'
-      inline: 'echo ''im from $timezone'''
-      readyTimeout: '20000'
+- name: hello
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'devlnxttca-sampath'
+    runOptions: 'inline'
+    inline: 'echo ''im from $timezone'''
+    readyTimeout: '20000'
