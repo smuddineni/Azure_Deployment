@@ -3,8 +3,6 @@ jobs:
   displayName: Pipeline yml format
   pool:
     name: TalendDevopsPool
-steps:
-  - checkout: none    
 parameters:
 - name: timezone
   displayName: Select Timezone
@@ -15,3 +13,11 @@ parameters:
   - America/Chicago
   - Africa/Johannesburg
   - Australia/Sydney
+  steps:
+  - checkout: none    
+  - task: SSH@0
+    inputs:
+      sshEndpoint: 'devlnxttca-sampath'
+      runOptions: 'inline'
+      inline: 'echo ''im from $timezone'''
+      readyTimeout: '20000'
