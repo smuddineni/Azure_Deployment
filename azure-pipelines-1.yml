@@ -14,3 +14,9 @@ parameters:
     runOptions: 'commands'
     commands: 'curl http://worldtimeapi.org/api/timezone$timezone'
     readyTimeout: '20000'
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo Write your commands here
+      
+      echo Hello world
