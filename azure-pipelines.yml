@@ -17,18 +17,23 @@ parameters:
   displayName: Run Tests?
   type: boolean
   default: false
-  
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    name: TalendDevopsPool
+  steps:
+  - checkout: none
+  - task: CmdLine@2
+    displayName: Command Line Script
+    enabled: False
+    inputs:
+      script: "\ncurl \"http://worldtimeapi.org/api/timezone\"\n \necho \"sampath\" | base64\n\ninput=\"Hello User\"\n\nauth=$(echo -ne \"helloooooooooo\" | base64)\n\necho $auth\"+done\"\n\nencodeddString=$(echo $input | base64)\necho \"after encoding..\"\necho $encodeddString\n\noutput=$(echo $encodeddString | base64 --decode)\necho \"after decoding..\"\necho $output\n\n"
+  - task: SSH@0
+    displayName: Run shell inline on remote machine
+    inputs:
+      sshEndpoint: fe79d3ad-65b4-47cd-b07e-cc18d8e3e32b
+      runOptions: inline
+      commands: "echo \"started..\"\n\necho \"pwd:-\"\npwd\n\ncd /home/smuddine/azure\n\necho \"pwd:\"\npwd\n\n#echo \"list files..\"\n#ls -ltr \n\n#echo \"exc shellscript..\"\n\nsh azure/associatePregenJob.sh\n\n\n#echo \"ended job \""
+      inline: "echo \"started..\"\n\necho \"pwd:-\"\npwd\n\ncd /home/smuddine/azure\n\necho \"pwd:\"\npwd\n\n#echo \"list files..\"\n#ls -ltr \n\n#echo \"exc shellscript..\"\n\nsh associatePregenJob.sh  \n\n\n#echo \"ended job \""
+...
