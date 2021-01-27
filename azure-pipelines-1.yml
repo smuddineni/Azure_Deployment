@@ -1,6 +1,6 @@
 jobs:
 - job: Job_1
-  displayName: Agent job 1
+  displayName: Pipeline yml format
   pool:
     name: TalendDevopsPool
 parameters:
@@ -13,15 +13,3 @@ parameters:
   - America/Chicago
   - Africa/Johannesburg
   - Australia/Sydney
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'devlnxttca-sampath'
-    runOptions: 'commands'
-    commands: 'curl http://worldtimeapi.org/api/timezone$timezone'
-    readyTimeout: '20000'
-- task: CmdLine@2
-  inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Hello world
