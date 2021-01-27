@@ -18,5 +18,5 @@ jobs:
       inputs:
         script: |
           echo Write your commands here
-          echo Hello world,Im from $timezone
+          echo Hello world,Im from ${{timezone}}
           echo "The time is :""
