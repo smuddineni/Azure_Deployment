@@ -8,7 +8,6 @@ parameters:
   - America/Chicago
   - Africa/Johannesburg
   - Australia/Sydney
-
 - task: SSH@0
   inputs:
     sshEndpoint: 'devlnxttca-sampath'
