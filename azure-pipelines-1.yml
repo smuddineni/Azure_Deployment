@@ -2,21 +2,14 @@ jobs:
 - job: Linux
   pool:
     vmImage: 'ubuntu-latest'
-    parameters:
-    - name: timezone
-      displayName: Select Timezone
-      default: Asia/Kolkata
-      values:
-        - Europe/London
-        - Asia/Kolkata
-        - America/Chicago
-        - Africa/Johannesburg
-        - Australia/Sydney
-
-  steps:
-    - task: CmdLine@2
-      inputs:
-        script: |
-          echo Write your commands here
-          
-          echo Hello world, $timezone
+ 
+parameters:
+  - name: timezone
+    displayName: Select Timezone
+    default: Asia/Kolkata
+    values:
+      - Europe/London
+      - Asia/Kolkata
+      - America/Chicago
+      - Africa/Johannesburg
+      - Australia/Sydney
