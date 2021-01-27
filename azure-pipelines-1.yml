@@ -1,0 +1,17 @@
+parameters:
+- name: timezone
+  displayName: Select Timezone
+  default: Asia/Kolkata
+  values:
+  - Europe/London
+  - Asia/Kolkata
+  - America/Chicago
+  - Africa/Johannesburg
+  - Australia/Sydney
+
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'devlnxttca-sampath'
+    runOptions: 'commands'
+    commands: 'curl http://worldtimeapi.org/api/timezone$timezone'
+    readyTimeout: '20000'
