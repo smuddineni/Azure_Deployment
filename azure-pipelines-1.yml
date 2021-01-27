@@ -2,7 +2,7 @@ jobs:
 - job: Linux
   pool:
     vmImage: 'ubuntu-latest'
-    parameters:
+parameters:
     - name: timezone
       displayName: Select Timezone
       default: Asia/Kolkata
