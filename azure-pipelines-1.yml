@@ -13,4 +13,11 @@ jobs:
       - America/Chicago
       - Africa/Johannesburg
       - Australia/Sydney
+  steps:
+    - task: SSH@0
+      inputs:
+        sshEndpoint: 'devlnxttca-sampath'
+        runOptions: 'inline'
+        inline: 'echo ''im from $timezone'''
+        readyTimeout: '20000'
 
