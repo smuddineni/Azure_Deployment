@@ -19,3 +19,4 @@ jobs:
         script: |
           echo Write your commands here
           echo 'Hello world,Im from ${{parameters.timezone}}'
+          echo 'Now Time at ${{parameters.timezone}} is '$(curl http://worldtimeapi.org/api/timezone/${{parameters.timezone}})
