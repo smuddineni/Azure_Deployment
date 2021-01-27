@@ -1,7 +1,3 @@
-jobs:
-- job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
  
 parameters:
   - name: timezone
@@ -13,3 +9,13 @@ parameters:
       - America/Chicago
       - Africa/Johannesburg
       - Australia/Sydney
+jobs:
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+    - task: CmdLine@2
+      inputs:
+        script: |
+          echo Write your commands here
+          echo Hello world
