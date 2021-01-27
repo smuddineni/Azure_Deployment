@@ -13,3 +13,8 @@ parameters:
   - America/Chicago
   - Africa/Johannesburg
   - Australia/Sydney
+- task: SSH@0
+  inputs:
+    runOptions: 'inline'
+    inline: 'echo "hello..im from "$timezone'
+    readyTimeout: '20000'
