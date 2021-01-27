@@ -12,10 +12,11 @@ jobs:
         - America/Chicago
         - Africa/Johannesburg
         - Australia/Sydney
+
+  steps:
     - task: CmdLine@2
       inputs:
-      script: |
-        echo Write your commands here
-        
-        echo Hello world,$timezone
-
+        script: |
+          echo Write your commands here
+          
+          echo Hello world, $timezone
