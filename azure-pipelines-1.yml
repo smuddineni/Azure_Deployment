@@ -3,16 +3,16 @@ jobs:
   displayName: Pipeline yml format
   pool:
     name: TalendDevopsPool
-  parameters:
-  - name: timezone
-    displayName: Select Timezone
-    default: Asia/Kolkata
-    values:
-    - Europe/London
-    - Asia/Kolkata
-    - America/Chicago
-    - Africa/Johannesburg
-    - Australia/Sydney
+    parameters:
+    - name: timezone
+      displayName: Select Timezone
+      default: Asia/Kolkata
+      values:
+      - Europe/London
+      - Asia/Kolkata
+      - America/Chicago
+      - Africa/Johannesburg
+      - Australia/Sydney
   steps:
     - checkout: none
     - task: SSH@0
