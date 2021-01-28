@@ -12,7 +12,7 @@ parameters:
 jobs:
 - job: Linux
   pool:
-    vmImage: 'ubuntu-latest'
+    name: TalendDevopsPool
   steps:
     - task: CmdLine@2
       inputs:
